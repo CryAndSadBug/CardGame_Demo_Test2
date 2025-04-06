@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8585244521242001767}
   - component: {fileID: 8826781860909036172}
   - component: {fileID: -123065951396337725}
+  - component: {fileID: 7864882044995349373}
+  - component: {fileID: -4484432940478293799}
   m_Layer: 0
   m_Name: "Black_PeachHeart_hypaspist_(\u9ED1\u6843\u76FE\u5175)"
   m_TagString: Untagged
@@ -130,3 +132,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7683089, y: 1.1884342}
   m_EdgeRadius: 0
+--- !u!114 &7864882044995349373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912867907387489907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02cc40b1c138de4bb49e548a235504e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4484432940478293799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912867907387489907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9003cd618be9a134db41bba6ff55210a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introduceTimer: 0
+  yOffset: 0.2
+  isCheck: 0
+  checkColor: {r: 0.75686276, g: 0.77254903, b: 0.48235294, a: 1}
