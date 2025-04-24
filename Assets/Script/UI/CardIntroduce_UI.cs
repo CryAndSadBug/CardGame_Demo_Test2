@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class CardIntroduce_UI : MonoBehaviour
 {
-    public static CardIntroduce_UI Instance;
+    public static CardIntroduce_UI instance;
 
     private void Awake()
     {
-        if (Instance != null)
+        if(instance != null)
         {
             Destroy(gameObject);
         }else
         {
-            Instance = this;
+            instance = this;
         }
     }
 
     public void Show() => transform.gameObject.SetActive(true);
-
     public void Hide() => transform.gameObject.SetActive(false);
 }

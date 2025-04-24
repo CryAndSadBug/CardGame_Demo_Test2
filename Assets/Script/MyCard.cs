@@ -1,30 +1,25 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MyCard : MonoBehaviour
 {
     [SerializeField] private List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
-    private GameObject newCard;
 
     private void Start()
     {
         UpdateMyCards();
 
-        if (myCards.Count <= 0)
-        {
-            GetCards();
-        }
+        GetCards();
     }
 
     private void GetCards()
     {
-        for (int i = 0; i <= 7; i++)
+        for (int i = 0; i <= 7 - myCards.Count; i++)
         {
-            newCard = Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
+            Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
         }
-        
+
         UpdateMyCards();
     }
 

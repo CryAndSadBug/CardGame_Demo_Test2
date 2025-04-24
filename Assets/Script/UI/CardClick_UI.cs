@@ -15,7 +15,7 @@ public class CardClick_UI : MonoBehaviour
     {
         sp = transform.GetComponent<SpriteRenderer>();
 
-        CardIntroduce_UI.Instance.Hide();
+        CardIntroduce_UI.instance.Hide();
     }
 
     #region 鼠标按下选中卡牌的偏移 和 变色
@@ -45,7 +45,7 @@ public class CardClick_UI : MonoBehaviour
 
         if (introduceTimer >= .7f)
         {
-            CardIntroduce_UI.Instance.Show();
+            CardIntroduce_UI.instance.Show();
             introduceTimer = 0;
         }
     }
@@ -55,7 +55,7 @@ public class CardClick_UI : MonoBehaviour
     // 鼠标退出
     private void OnMouseExit()
     {
-        CardIntroduce_UI.Instance.Hide();
+        CardIntroduce_UI.instance.Hide();
     }
     #endregion
 }
