@@ -12,13 +12,15 @@ public class MyCard : MonoBehaviour
     {
         UpdateMyCards();
 
-        GetCards();
+        if (myCards.Count <= 0)
+        {
+            GetCards();
+        }
     }
 
-    // 获取卡牌
     private void GetCards()
     {
-        for (int i = 0; i <= 7 - myCards.Count; i++)
+        for (int i = 0; i <= 7; i++)
         {
             newCard = Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
         }
@@ -26,7 +28,6 @@ public class MyCard : MonoBehaviour
         UpdateMyCards();
     }
 
-    // 更新卡牌数组
     private void UpdateMyCards()
     {
         myCards.Clear();
