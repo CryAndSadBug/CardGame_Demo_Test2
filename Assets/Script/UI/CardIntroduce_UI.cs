@@ -1,18 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardIntroduce_UI : MonoBehaviour
 {
-    [SerializeField] private List<Transform> introduceBoxChildren;
+    public static CardIntroduce_UI Instance;
 
-    private void Start()
+    private void Awake()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        if (Instance != null)
         {
-            Transform child = transform.GetChild(i);
-
-            introduceBoxChildren.Add(child);
+            Destroy(gameObject);
+        }else
+        {
+            Instance = this;
         }
-
     }
+
+    public void Show() => transform.gameObject.SetActive(true);
+
+    public void Hide() => transform.gameObject.SetActive(false);
 }

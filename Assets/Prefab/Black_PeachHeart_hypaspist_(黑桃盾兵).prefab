@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8585244521242001767}
   - component: {fileID: 8826781860909036172}
   - component: {fileID: -123065951396337725}
-  - component: {fileID: -4484432940478293799}
+  - component: {fileID: -2895768225912767319}
   m_Layer: 0
   m_Name: "Black_PeachHeart_hypaspist_(\u9ED1\u6843\u76FE\u5175)"
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4912867907387489907}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 0, z: 0}
+  m_LocalPosition: {x: -5.6, y: 0, z: 0}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7683089, y: 1.1884342}
   m_EdgeRadius: 0
---- !u!114 &-4484432940478293799
+--- !u!114 &-2895768225912767319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,10 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4912867907387489907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9003cd618be9a134db41bba6ff55210a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e93248d94789eb4f9ca5a7a9613a19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introduceTimer: 0
   yOffset: 0.2
   isCheck: 0
-  checkColor: {r: 0.75686276, g: 0.77254903, b: 0.48235294, a: 1}
+  checkColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
