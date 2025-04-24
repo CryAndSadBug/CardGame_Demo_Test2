@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2860286931820535851}
   - component: {fileID: 8018156246803862148}
   - component: {fileID: 2402004953212450782}
-  - component: {fileID: 5766064410457700555}
   - component: {fileID: -7758832448929675296}
   m_Layer: 0
   m_Name: "Black_PeachHeart_Knight_(\u9ED1\u6843\u9A91\u58EB)"
@@ -132,18 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7667221, y: 1.193423}
   m_EdgeRadius: 0
---- !u!114 &5766064410457700555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6768215482380232381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02cc40b1c138de4bb49e548a235504e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-7758832448929675296
 MonoBehaviour:
   m_ObjectHideFlags: 0

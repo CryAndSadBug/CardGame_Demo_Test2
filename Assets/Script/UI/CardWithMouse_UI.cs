@@ -57,7 +57,7 @@ public class ClickCard_UI : MonoBehaviour
     {
         introduceTimer += 1 * Time.deltaTime;
 
-        Debug.Log(introduceTimer);
+        // Debug.Log(introduceTimer);
 
         if (introduceTimer >= .7f)
         {

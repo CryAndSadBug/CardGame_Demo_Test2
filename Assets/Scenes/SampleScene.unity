@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 609998929}
   - component: {fileID: 609998930}
   m_Layer: 0
-  m_Name: MyCard
+  m_Name: MyCards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,15 +497,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609998928}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -3.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 176, y: 58.505463, z: -4050.378}
+  m_LocalScale: {x: 45.0042, y: 45.0042, z: 45.0042}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 660517576}
   - {fileID: 40117333}
   - {fileID: 961615985}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 919194699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &609998930
 MonoBehaviour:
@@ -926,7 +926,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 609998929}
   m_Father: {fileID: 708923553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1486,7 +1487,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1543,7 +1545,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Black_PeachHeart_Knight_(\u9ED1\u6843\u9A91\u58EB)"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1625,5 +1628,4 @@ SceneRoots:
   - {fileID: 708923553}
   - {fileID: 587143450}
   - {fileID: 1454841784}
-  - {fileID: 609998929}
   - {fileID: 1151706894}
