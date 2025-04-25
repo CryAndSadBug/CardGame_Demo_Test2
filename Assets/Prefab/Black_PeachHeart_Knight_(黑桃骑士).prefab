@@ -143,6 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e93248d94789eb4f9ca5a7a9613a19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: "Black_PeachHeart_Knight_(\u9ED1\u6843\u9A91\u58EB)"
+  cardType: attack
+  cardIntrocude: testing
   yOffset: 0.2
   isCheck: 0
   checkColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}

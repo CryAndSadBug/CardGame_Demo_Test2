@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1407176934398551291}
   - component: {fileID: -4516269150370384438}
   m_Layer: 0
-  m_Name: "Black_PeachHeart_archer_(\u9ED1\u6843\u5F13\u7BAD\u624B) "
+  m_Name: "Black_PeachHeart_archer_(\u9ED1\u6843\u5F13\u7BAD\u624B)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e93248d94789eb4f9ca5a7a9613a19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: "Black_PeachHeart_archer_(\u9ED1\u6843\u5F13\u7BAD\u624B)"
+  cardType: Attack
+  cardIntrocude: testing
   yOffset: 0.2
   isCheck: 0
   checkColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}

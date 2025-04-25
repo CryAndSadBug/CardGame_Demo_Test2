@@ -1,7 +1,16 @@
 using UnityEngine;
 
-public class CardClick_UI : MonoBehaviour 
+public class Cards : MonoBehaviour 
 {
+    [TextArea(1, 1)]
+    [SerializeField] public string cardName;
+    [TextArea(1, 1)]
+    [SerializeField] public string cardType;
+    [TextArea(1, 10)]
+    [SerializeField] public string cardIntrocude;
+
+    protected CardIntroduce_UI cardIntroduce_UI;
+
     private SpriteRenderer sp;
 
     [SerializeField] private float yOffset;
@@ -11,11 +20,13 @@ public class CardClick_UI : MonoBehaviour
 
     private float introduceTimer;
 
-    private void Start()
+    protected virtual void Start()
     {
         sp = transform.GetComponent<SpriteRenderer>();
 
         CardIntroduce_UI.instance.Hide();
+
+        cardIntroduce_UI = CardIntroduce_UI.instance;
     }
 
     #region 鼠标按下选中卡牌的偏移 和 变色
@@ -46,8 +57,9 @@ public class CardClick_UI : MonoBehaviour
         if (introduceTimer >= .7f)
         {
             CardIntroduce_UI.instance.Show();
+            cardIntroduce_UI.SetIntroduce(this, cardName, cardType, cardIntrocude);
             introduceTimer = 0;
-        }
+        } 
     }
     #endregion
 
