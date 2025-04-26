@@ -3,8 +3,21 @@ using UnityEngine;
 
 public class MyCard : MonoBehaviour
 {
-    [SerializeField] private List<Transform> myCards;
+    public static MyCard instance;
+
+    public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        } else
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -13,6 +26,9 @@ public class MyCard : MonoBehaviour
         GetCards();
     }
 
+    /// <summary>
+    ///  获取卡牌
+    /// </summary>
     private void GetCards()
     {
         for (int i = 0; i <= 7 - myCards.Count; i++)
@@ -23,7 +39,10 @@ public class MyCard : MonoBehaviour
         UpdateMyCards();
     }
 
-    private void UpdateMyCards()
+    /// <summary>
+    /// 更新牌库数组并整理卡牌
+    /// </summary>
+    public void UpdateMyCards()
     {
         myCards.Clear();
 

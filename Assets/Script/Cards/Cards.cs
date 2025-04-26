@@ -10,6 +10,7 @@ public class Cards : MonoBehaviour
     [SerializeField] public string cardIntrocude;
 
     protected CardIntroduce_UI cardIntroduce_UI;
+    private MyCard myCard;
 
     private SpriteRenderer sp;
 
@@ -27,6 +28,8 @@ public class Cards : MonoBehaviour
         CardIntroduce_UI.instance.Hide();
 
         cardIntroduce_UI = CardIntroduce_UI.instance;
+
+        myCard = MyCard.instance;
     }
 
     #region 鼠标按下选中卡牌的偏移 和 变色
@@ -59,7 +62,10 @@ public class Cards : MonoBehaviour
             CardIntroduce_UI.instance.Show();
             cardIntroduce_UI.SetIntroduce(this, cardName, cardType, cardIntrocude);
             introduceTimer = 0;
-        } 
+        }
+
+        DeleteCard(this);
+        Debug.Log(this);
     }
     #endregion
 
@@ -70,4 +76,15 @@ public class Cards : MonoBehaviour
         CardIntroduce_UI.instance.Hide();
     }
     #endregion
+
+    private void DeleteCard(Cards _target)
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            CardIntroduce_UI.instance.Hide();
+
+            Destroy(_target.gameObject);
+            myCard.myCards.Remove(_target.transform);
+        }
+    }
 }
