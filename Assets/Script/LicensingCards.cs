@@ -6,6 +6,7 @@ public class LicensingCards : MonoBehaviour
     private Animation anim;
 
     private AnimationLoopCounter loopCounter;
+    private MyCard myCard;
 
     private void Start()
     {
@@ -14,11 +15,16 @@ public class LicensingCards : MonoBehaviour
         anim = GetComponent<Animation>();
 
         loopCounter = animator.GetBehaviour<AnimationLoopCounter>();
+
+        myCard = MyCard.instance;
     }
 
     private void Update()
     {
         LicensingCardsAnimation();
+
+        if (myCard.canLicensingCards)
+            myCard.GetCards();
     }
 
     public void LicensingCardsAnimation()
@@ -30,6 +36,8 @@ public class LicensingCards : MonoBehaviour
             {
                 animator.enabled = false;
                 Destroy(gameObject);
+
+                myCard.canLicensingCards = true;
             }
         }
     }

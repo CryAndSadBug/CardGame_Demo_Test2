@@ -8,6 +8,8 @@ public class MyCard : MonoBehaviour
     public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
 
+    public bool canLicensingCards;
+
     private void Awake()
     {
         if (instance != null)
@@ -22,19 +24,18 @@ public class MyCard : MonoBehaviour
     private void Start()
     {
         UpdateMyCards();
-
-        GetCards();
     }
 
     /// <summary>
     ///  ªÒ»°ø®≈∆
     /// </summary>
-    private void GetCards()
+    public void GetCards()
     {
         for (int i = 0; i <= 7 - myCards.Count; i++)
         {
             Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
         }
+        canLicensingCards = false;
 
         UpdateMyCards();
     }

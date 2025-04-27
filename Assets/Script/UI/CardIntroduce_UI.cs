@@ -25,6 +25,9 @@ public class CardIntroduce_UI : MonoBehaviour
         cardName = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         cardIntroduce = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         cardType = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+
+        if (MyCard.instance.myCards.Count <= 0)
+            Hide();
     }
 
     public void SetIntroduce(Cards _target, string _cardName, string _cardType, string _cardIntroduce)
