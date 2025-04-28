@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cards : MonoBehaviour 
 {
@@ -15,11 +16,13 @@ public class Cards : MonoBehaviour
     private SpriteRenderer sp;
 
     [SerializeField] private float yOffset;
-    [SerializeField] private bool isCheck;
+    [SerializeField] public bool isCheck;
 
     [SerializeField] private Color checkColor;
 
     private float introduceTimer;
+
+    [SerializeField] private Button deleteButton;
 
     protected virtual void Start()
     {
@@ -41,12 +44,15 @@ public class Cards : MonoBehaviour
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - yOffset);
             sp.color = Color.white;
             isCheck = false;
+            myCard.checkCards.Remove(transform);
             return;
         }
 
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + yOffset);
         sp.color = checkColor;
         isCheck = true;
+
+        myCard.checkCards.Add(transform);
 
     }
     #endregion
@@ -63,9 +69,6 @@ public class Cards : MonoBehaviour
             cardIntroduce_UI.SetIntroduce(this, cardName, cardType, cardIntrocude);
             introduceTimer = 0;
         }
-
-        DeleteCard(this);
-        Debug.Log(this);
     }
     #endregion
 
@@ -76,15 +79,4 @@ public class Cards : MonoBehaviour
         CardIntroduce_UI.instance.Hide();
     }
     #endregion
-
-    private void DeleteCard(Cards _target)
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            CardIntroduce_UI.instance.Hide();
-
-            Destroy(_target.gameObject);
-            myCard.myCards.Remove(_target.transform);
-        }
-    }
 }

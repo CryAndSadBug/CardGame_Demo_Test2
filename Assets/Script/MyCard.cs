@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class MyCard : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class MyCard : MonoBehaviour
 
     public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
+    public List<Transform> checkCards;
 
     public bool canLicensingCards;
 
@@ -33,7 +35,9 @@ public class MyCard : MonoBehaviour
     {
         for (int i = 0; i <= 7 - myCards.Count; i++)
         {
-            Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
+            GameObject newCard = Instantiate(cardPrefabs[Random.Range(0, cardPrefabs.Count)], transform);
+
+            newCard.name = newCard.name + "_" + i;
         }
         canLicensingCards = false;
 
@@ -68,5 +72,17 @@ public class MyCard : MonoBehaviour
 
             myCards[i].localPosition = lastCardPosition + new Vector3(1.6f, 0);
         }
+    }
+
+    // 通过按钮绑定了弃牌方法
+    public void DeleteCard()
+    {
+        foreach (var card in checkCards)
+        {
+            Destroy(card.gameObject);
+            myCards.Remove(card);
+        }
+
+        checkCards.Clear();
     }
 }
