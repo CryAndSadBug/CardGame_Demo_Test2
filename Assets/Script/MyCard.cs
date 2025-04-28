@@ -84,5 +84,7 @@ public class MyCard : MonoBehaviour
         }
 
         checkCards.Clear();
+
+        OrganizeCards();
     }
 }
