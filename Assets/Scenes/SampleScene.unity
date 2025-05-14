@@ -1107,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 2452974803683280801, guid: 451bbf5d3b19ef642bb9fcd121a4405b, type: 3}
   - {fileID: 4912867907387489907, guid: be2fb4da5d349854f88f08bde122f91b, type: 3}
   - {fileID: 6768215482380232381, guid: e6c28aaad6a5cb94ba13db39507a1d65, type: 3}
+  checkCards: []
   canLicensingCards: 0
 --- !u!1 &636675033
 GameObject:

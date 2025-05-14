@@ -66,6 +66,9 @@ public class MyCard : MonoBehaviour
     /// </summary>
     private void OrganizeCards()
     {
+        if(myCards.Count > 0)
+            myCards[0].localPosition = new Vector3(-5.6f, 0);
+
         for (int i = 1; i < myCards.Count; i++)
         {
             Vector3 lastCardPosition = myCards[i - 1].localPosition;
