@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class MyCard : MonoBehaviour
 {
@@ -66,7 +65,7 @@ public class MyCard : MonoBehaviour
     /// </summary>
     private void OrganizeCards()
     {
-        if(myCards.Count > 0)
+        if (myCards.Count > 0)
             myCards[0].localPosition = new Vector3(-5.6f, 0);
 
         for (int i = 1; i < myCards.Count; i++)
@@ -89,5 +88,11 @@ public class MyCard : MonoBehaviour
         checkCards.Clear();
 
         OrganizeCards();
+    }
+    
+    // 通过按钮绑定了发牌方法
+    public void SendCard()
+    {
+        Debug.Log("Send cards");
     }
 }
