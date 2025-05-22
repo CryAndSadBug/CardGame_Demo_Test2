@@ -32,7 +32,7 @@ public class LicensingCards : MonoBehaviour
         if (loopCounter != null && animator.enabled != false)
         {
             Debug.Log("发了: " + loopCounter.loopCount + "张");
-            if (loopCounter.loopCount == 7)
+            if (loopCounter.loopCount == 8)
             {
                 animator.enabled = false;
                 Destroy(gameObject);

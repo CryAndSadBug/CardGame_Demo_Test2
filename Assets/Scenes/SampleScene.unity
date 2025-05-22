@@ -1107,7 +1107,9 @@ MonoBehaviour:
   - {fileID: 2452974803683280801, guid: 451bbf5d3b19ef642bb9fcd121a4405b, type: 3}
   - {fileID: 4912867907387489907, guid: be2fb4da5d349854f88f08bde122f91b, type: 3}
   - {fileID: 6768215482380232381, guid: e6c28aaad6a5cb94ba13db39507a1d65, type: 3}
+  newParent: {fileID: 861478161}
   checkCards: []
+  sendCards: []
   canLicensingCards: 0
 --- !u!1 &636675033
 GameObject:
@@ -1433,6 +1435,7 @@ RectTransform:
   - {fileID: 684735152}
   - {fileID: 919194699}
   - {fileID: 1946221621}
+  - {fileID: 861478161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1571,6 +1574,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 937e1e6bdd52df742be0c1cb210f634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &861478160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 861478161}
+  - component: {fileID: 861478162}
+  m_Layer: 5
+  m_Name: SentCard_Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &861478161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861478160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 708923553}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -75, y: -40}
+  m_SizeDelta: {x: 521.44, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &861478162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861478160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454c095075ce23e4bbf34d8a4620ec5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &891977347

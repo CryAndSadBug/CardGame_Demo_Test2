@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5665eaacfb1c21249add0eae5d48e3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopCount: 0
+  loopCount: 1
 --- !u!1102 &-1658095574597170461
 AnimatorState:
   serializedVersion: 6

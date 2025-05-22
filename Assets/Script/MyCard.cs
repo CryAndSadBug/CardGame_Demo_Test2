@@ -7,6 +7,7 @@ public class MyCard : MonoBehaviour
 
     public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
+    [SerializeField] private Transform newParent;
     public List<Transform> checkCards;
 
     public bool canLicensingCards;
@@ -79,6 +80,9 @@ public class MyCard : MonoBehaviour
     // 通过按钮绑定了弃牌方法
     public void DeleteCard()
     {
+        if (checkCards.Count <= 0)
+            return;
+
         foreach (var card in checkCards)
         {
             Destroy(card.gameObject);
@@ -93,6 +97,11 @@ public class MyCard : MonoBehaviour
     // 通过按钮绑定了发牌方法
     public void SendCard()
     {
-        Debug.Log("Send cards");
+        foreach(var card in checkCards)
+        {
+            CheckCard_Box.instance.sendCards.Add(card);
+            card.transform.SetParent(newParent);
+        }
+        checkCards.Clear();
     }
 }

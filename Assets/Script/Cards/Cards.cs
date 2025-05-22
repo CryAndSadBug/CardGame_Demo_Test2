@@ -22,8 +22,6 @@ public class Cards : MonoBehaviour
 
     private float introduceTimer;
 
-    [SerializeField] private Button deleteButton;
-
     protected virtual void Start()
     {
         sp = transform.GetComponent<SpriteRenderer>();
