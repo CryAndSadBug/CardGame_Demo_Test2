@@ -1,9 +1,12 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MyCard : MonoBehaviour
 {
     public static MyCard instance;
+
+    private CheckCard_Box checkCardBox;
 
     public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
@@ -25,6 +28,7 @@ public class MyCard : MonoBehaviour
 
     private void Start()
     {
+        checkCardBox = CheckCard_Box.instance;
         UpdateMyCards();
     }
 
@@ -58,15 +62,15 @@ public class MyCard : MonoBehaviour
             myCards.Add(child);
         }
 
-        OrganizeCards();
+        OrganizeCards(myCards, -5.6f, 0, 1.6f, 0);
     }
 
     /// <summary>
     /// 整理卡牌
     /// </summary>
-    private void OrganizeCards()
+    public void OrganizeCards(List<Transform> cardList, float x, float y, float xOffset, float yOffset)
     {
-        if (myCards.Count > 0)
+        /*if (myCards.Count > 0)
             myCards[0].localPosition = new Vector3(-5.6f, 0);
 
         for (int i = 1; i < myCards.Count; i++)
@@ -74,6 +78,15 @@ public class MyCard : MonoBehaviour
             Vector3 lastCardPosition = myCards[i - 1].localPosition;
 
             myCards[i].localPosition = lastCardPosition + new Vector3(1.6f, 0);
+        }*/
+        if (cardList.Count > 0)
+            cardList[0].localPosition = new Vector3(x, 0);
+
+        for (int i = 1; i < cardList.Count; i++)
+        {
+            Vector3 lastCardPosition = cardList[i - 1].localPosition;
+
+            cardList[i].localPosition = lastCardPosition + new Vector3(xOffset, yOffset);
         }
     }
 
@@ -91,17 +104,34 @@ public class MyCard : MonoBehaviour
 
         checkCards.Clear();
 
-        OrganizeCards();
+        OrganizeCards(myCards, -5.6f, 0, 1.6f, 0);
     }
-    
+
     // 通过按钮绑定了发牌方法
     public void SendCard()
     {
-        foreach(var card in checkCards)
+        foreach (var card in checkCards)
         {
-            CheckCard_Box.instance.sendCards.Add(card);
+            checkCardBox.sendCards.Add(card);
+            // 把卡牌的父对象变为 newParent
             card.transform.SetParent(newParent);
         }
         checkCards.Clear();
+
+        StartCoroutine(SendCardButtonIEnumerator());
+    }
+
+    /// <summary>
+    /// 用于处理按下按钮后卡牌独有的特殊效果
+    /// </summary>
+    private IEnumerator SendCardButtonIEnumerator()
+    {
+        // 执行卡牌的独有方法
+        Debug.Log("执行卡牌的独有方法");
+
+        yield return new WaitForSeconds(2);
+
+        Debug.Log("2秒之后执行清除发牌数组的方法");
+        checkCardBox.ClearCards();
     }
 }
