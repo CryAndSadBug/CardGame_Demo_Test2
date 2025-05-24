@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 609998928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49fbd4cc9351094d9d91c9514e19fa0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c6e247042288c84b9cc448ac4b3b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myCards: []
@@ -1109,7 +1109,6 @@ MonoBehaviour:
   - {fileID: 6768215482380232381, guid: e6c28aaad6a5cb94ba13db39507a1d65, type: 3}
   newParent: {fileID: 861478161}
   checkCards: []
-  sendCards: []
   canLicensingCards: 0
 --- !u!1 &636675033
 GameObject:
@@ -1624,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454c095075ce23e4bbf34d8a4620ec5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendCards: []
 --- !u!1 &891977347
 GameObject:
   m_ObjectHideFlags: 0

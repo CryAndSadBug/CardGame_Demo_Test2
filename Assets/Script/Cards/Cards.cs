@@ -11,7 +11,7 @@ public class Cards : MonoBehaviour
     [SerializeField] public string cardIntrocude;
 
     protected CardIntroduce_UI cardIntroduce_UI;
-    private MyCard myCard;
+    private MyCard_Box myCard;
 
     private SpriteRenderer sp;
 
@@ -30,7 +30,7 @@ public class Cards : MonoBehaviour
 
         cardIntroduce_UI = CardIntroduce_UI.instance;
 
-        myCard = MyCard.instance;
+        myCard = MyCard_Box.instance;
     }
 
     #region 鼠标按下选中卡牌的偏移 和 变色

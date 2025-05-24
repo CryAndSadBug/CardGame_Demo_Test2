@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyCard : MonoBehaviour
+public class MyCard_Box : MonoBehaviour
 {
-    public static MyCard instance;
+    public static MyCard_Box instance;
 
-    private CheckCard_Box checkCardBox;
+    private SendCard_Box sendCardBox;
 
     public List<Transform> myCards;
     [SerializeField] private List<GameObject> cardPrefabs;
@@ -14,6 +14,11 @@ public class MyCard : MonoBehaviour
     public List<Transform> checkCards;
 
     public bool canLicensingCards;
+
+    // ==================== test ====================
+    public bool canClearSendCardBox;
+    public bool usedSkill;
+    // ==============================================
 
     private void Awake()
     {
@@ -28,7 +33,7 @@ public class MyCard : MonoBehaviour
 
     private void Start()
     {
-        checkCardBox = CheckCard_Box.instance;
+        sendCardBox = SendCard_Box.instance;
         UpdateMyCards();
     }
 
@@ -79,6 +84,7 @@ public class MyCard : MonoBehaviour
 
             myCards[i].localPosition = lastCardPosition + new Vector3(1.6f, 0);
         }*/
+
         if (cardList.Count > 0)
             cardList[0].localPosition = new Vector3(x, 0);
 
@@ -112,11 +118,17 @@ public class MyCard : MonoBehaviour
     {
         foreach (var card in checkCards)
         {
-            checkCardBox.sendCards.Add(card);
+            sendCardBox.sendCards.Add(card);
             // 把卡牌的父对象变为 newParent
             card.transform.SetParent(newParent);
         }
+
+        OrganizeCards(sendCardBox.sendCards, 80, 0, 0, 0);
+
         checkCards.Clear();
+
+        if (sendCardBox.sendCards.Count <= 0)
+            return;
 
         StartCoroutine(SendCardButtonIEnumerator());
     }
@@ -127,11 +139,31 @@ public class MyCard : MonoBehaviour
     private IEnumerator SendCardButtonIEnumerator()
     {
         // 执行卡牌的独有方法
-        Debug.Log("执行卡牌的独有方法");
+        Debug.Log("run to here");
+        Test();
 
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
+        yield return new WaitUntil(Test);
 
-        Debug.Log("2秒之后执行清除发牌数组的方法");
-        checkCardBox.ClearCards();
+        sendCardBox.ClearCards();
+        Debug.Log("执行清除发牌数组的方法");
+    }
+
+
+    private bool Test()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("执行卡牌的独有方法");
+            usedSkill = true;
+        }
+
+        if (usedSkill)
+        {
+            canClearSendCardBox = true;
+            usedSkill = false;
+        }
+
+        return canClearSendCardBox;
     }
 }

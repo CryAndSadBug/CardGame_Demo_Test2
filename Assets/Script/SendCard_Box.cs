@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckCard_Box : MonoBehaviour
+public class SendCard_Box : MonoBehaviour
 {
-    static public CheckCard_Box instance;
+    static public SendCard_Box instance;
 
     public List<Transform> sendCards;
-    private MyCard myCard;
+    private MyCard_Box myCard;
 
     private void Awake()
     {
@@ -21,12 +21,15 @@ public class CheckCard_Box : MonoBehaviour
 
     private void Start()
     {
-        myCard = MyCard.instance;
+        myCard = MyCard_Box.instance;
     }
 
     // 清除发牌数组
     public void ClearCards()
     {
+        if (sendCards.Count <= 0)
+            return;
+
         foreach (var card in sendCards)
         {
             // 先删除游戏物体
@@ -35,6 +38,9 @@ public class CheckCard_Box : MonoBehaviour
             myCard.myCards.Remove(card);
         }
         sendCards.Clear();
+
         myCard.OrganizeCards(myCard.myCards, -5.6f, 0, 1.6f, 0);
+
+        myCard.canClearSendCardBox = false;
     }
 }

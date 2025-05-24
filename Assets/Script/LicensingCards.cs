@@ -6,7 +6,7 @@ public class LicensingCards : MonoBehaviour
     private Animation anim;
 
     private AnimationLoopCounter loopCounter;
-    private MyCard myCard;
+    private MyCard_Box myCard;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class LicensingCards : MonoBehaviour
 
         loopCounter = animator.GetBehaviour<AnimationLoopCounter>();
 
-        myCard = MyCard.instance;
+        myCard = MyCard_Box.instance;
     }
 
     private void Update()
