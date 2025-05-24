@@ -145,11 +145,15 @@ public class MyCard_Box : MonoBehaviour
         //yield return new WaitForSeconds(2);
         yield return new WaitUntil(Test);
 
+        // 1秒过渡 后续可增长自由发挥进行动画处理
+        yield return new WaitForSeconds(1);
+
         sendCardBox.ClearCards();
         Debug.Log("执行清除发牌数组的方法");
     }
 
 
+    // 模拟卡牌释放技能的过程
     private bool Test()
     {
         if (Input.GetKeyDown(KeyCode.Space))
